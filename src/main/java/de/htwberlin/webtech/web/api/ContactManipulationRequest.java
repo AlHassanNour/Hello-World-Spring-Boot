@@ -1,6 +1,6 @@
 package de.htwberlin.webtech.web.api;
 
-public class ContactCreateRequest {
+public class ContactManipulationRequest {
 
     private String firstName;
     private String secondName;
@@ -8,7 +8,7 @@ public class ContactCreateRequest {
     private String email;
     private String phone;
 
-    public ContactCreateRequest(String firstName, String secondName, String work, String email, String phone) {
+    public ContactManipulationRequest(String firstName, String secondName, String work, String email, String phone) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.work = work;
