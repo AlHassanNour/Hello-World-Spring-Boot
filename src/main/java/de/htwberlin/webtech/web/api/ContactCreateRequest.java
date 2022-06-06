@@ -1,45 +1,20 @@
-package de.htwberlin.webtech.persistence;
+package de.htwberlin.webtech.web.api;
 
+public class ContactCreateRequest {
 
-import javax.persistence.*;
-
-@Entity(name = "contacts")
-public class ContactEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
-    @Column(name = "first_name", nullable = false)
     private String firstName;
-    @Column(name = "second_name", nullable = false)
     private String secondName;
-    @Column(name = "work")
     private String work;
-    @Column(name = "email")
     private String email;
-    @Column(name = "phone")
     private String phone;
 
-
-    public ContactEntity(String firstName, String secondName, String work, String email, String phone) {
-
+    public ContactCreateRequest(String firstName, String secondName, String work, String email, String phone) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.work = work;
         this.email = email;
         this.phone = phone;
-
     }
-
-    protected ContactEntity() {
-
-    }
-
-    public int getId() {
-        return id;
-    }
-
-
 
     public String getFirstName() {
         return firstName;
@@ -80,5 +55,4 @@ public class ContactEntity {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
 }
