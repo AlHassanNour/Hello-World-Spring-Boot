@@ -3,7 +3,7 @@ name: CI
 on: [ push ]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,5 +12,5 @@ jobs:
         with:
           distribution: "adopt"
           java-version: 16
-      - name: clean test
-        run: ./gradlew clean test --info
+      - name: clean build
+        run: .\gradlew clean build --info --stacktrace
