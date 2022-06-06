@@ -6,6 +6,9 @@ public class Contact {
     private String firstName;
     private String secondName;
     private String work;
+    private String email;
+    private String phone;
+
 
     public Contact(int id, String firstName, String secondName, String work, String email, String phone) {
         this.id = id;
@@ -16,8 +19,7 @@ public class Contact {
         this.phone = phone;
     }
 
-    private String email;
-    private String phone;
+
 
     public int getId() {
         return id;

@@ -19,12 +19,7 @@ public class ContactEntity {
     private String email;
     @Column(name = "phone")
     private String phone;
-    @Column(name = "test")
-    private String testcolumn;
 
-    public ContactEntity(String testcolumn) {
-        this.testcolumn = testcolumn;
-    }
 
     public ContactEntity(int id, String firstName, String secondName, String work, String email, String phone) {
         this.id = id;
@@ -85,11 +80,5 @@ public class ContactEntity {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public String getTestcolumn() {
-        return testcolumn;
-    }
 
-    public void setTestcolumn(String testcolumn) {
-        this.testcolumn = testcolumn;
-    }
 }
