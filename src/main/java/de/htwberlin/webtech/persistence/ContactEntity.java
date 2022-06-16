@@ -19,7 +19,20 @@ public class ContactEntity {
     private String email;
     @Column(name = "phone")
     private String phone;
+    @Column(name = "gender")
+    private String gender;
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public ContactEntity(String gender) {
+        this.gender = gender;
+    }
 
     public ContactEntity(String firstName, String secondName, String work, String email, String phone) {
 
