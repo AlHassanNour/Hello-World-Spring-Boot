@@ -7,14 +7,18 @@ public class ContactManipulationRequest {
     private String work;
     private String email;
     private String phone;
+    private String gender;
 
-    public ContactManipulationRequest(String firstName, String secondName, String work, String email, String phone) {
+    public ContactManipulationRequest(String firstName, String secondName, String work, String email, String phone, String gender) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.work = work;
         this.email = email;
         this.phone = phone;
+        this.gender= gender;
     }
+
+    public ContactManipulationRequest(){}
 
     public String getFirstName() {
         return firstName;
@@ -50,6 +54,14 @@ public class ContactManipulationRequest {
 
     public String getPhone() {
         return phone;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public void setPhone(String phone) {

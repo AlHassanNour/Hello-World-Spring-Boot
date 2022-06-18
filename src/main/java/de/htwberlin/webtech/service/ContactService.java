@@ -38,7 +38,8 @@ public class ContactService {
                 contactEntity.getSecondName(),
                 contactEntity.getWork(),
                 contactEntity.getEmail(),
-                contactEntity.getPhone()
+                contactEntity.getPhone(),
+                contactEntity.getGender()
         );
     }
 
@@ -59,6 +60,7 @@ public class ContactService {
         contactEntity.setWork(request.getWork());
         contactEntity.setEmail(request.getEmail());
         contactEntity.setPhone(request.getPhone());
+        contactEntity.setGender(request.getGender());
         contactEntity=contactRepository.save(contactEntity);
         return transformEntity(contactEntity);
     }

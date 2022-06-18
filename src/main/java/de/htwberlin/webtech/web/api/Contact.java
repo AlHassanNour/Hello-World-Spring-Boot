@@ -8,15 +8,26 @@ public class Contact {
     private String work;
     private String email;
     private String phone;
+    private String gender;
 
 
-    public Contact(int id, String firstName, String secondName, String work, String email, String phone) {
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Contact(int id, String firstName, String secondName, String work, String email, String phone, String gender) {
         this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
         this.work = work;
         this.email = email;
         this.phone = phone;
+        this.gender=gender;
     }
 
 
