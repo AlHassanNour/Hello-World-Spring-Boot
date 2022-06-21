@@ -13,8 +13,8 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
          registry.addMapping("/api/**")
                  .allowedMethods("*")
-                 .allowedOrigins("http://localhost:3000/",
-                         "https://webtech-contacts-frontend.herokuapp.com/");
+                 .allowedOrigins("http://localhost:3000",
+                         "https://webtech-contacts-frontend.herokuapp.com");
     }
 
     }
