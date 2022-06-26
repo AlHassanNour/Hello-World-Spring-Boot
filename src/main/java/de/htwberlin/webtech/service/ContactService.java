@@ -26,7 +26,7 @@ public class ContactService {
 
     public Contact create(ContactManipulationRequest request){
 
-        var contactEntity= new ContactEntity(request.getFirstName(),request.getSecondName(),request.getWork(),request.getEmail(),request.getPhone());
+        var contactEntity= new ContactEntity(request.getFirstName(),request.getSecondName(),request.getWork(),request.getEmail(),request.getPhone(),request.getGender());
       contactEntity =   contactRepository.save(contactEntity);
       return transformEntity(contactEntity);
     }

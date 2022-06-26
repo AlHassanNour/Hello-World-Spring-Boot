@@ -30,17 +30,15 @@ public class ContactEntity {
         this.gender = gender;
     }
 
-    public ContactEntity(String gender) {
-        this.gender = gender;
-    }
 
-    public ContactEntity(String firstName, String secondName, String work, String email, String phone) {
+    public ContactEntity(String firstName, String secondName, String work, String email, String phone,String gender) {
 
         this.firstName = firstName;
         this.secondName = secondName;
         this.work = work;
         this.email = email;
         this.phone = phone;
+        this.gender=gender;
 
     }
 
