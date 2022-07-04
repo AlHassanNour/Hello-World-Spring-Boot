@@ -1,6 +1,8 @@
 package de.htwberlin.webtech.persistence;
 
 
+import de.htwberlin.webtech.web.api.Contact;
+
 import javax.persistence.*;
 
 @Entity(name = "contacts")
@@ -20,31 +22,22 @@ public class ContactEntity {
     @Column(name = "phone")
     private String phone;
     @Column(name = "gender")
-    private String gender;
+    @Enumerated(value = EnumType.STRING)
+    private Gender gender;
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-
-    public ContactEntity(String firstName, String secondName, String work, String email, String phone,String gender) {
+    public ContactEntity(String firstName, String secondName, String work, String email, String phone,Gender gender) {
 
         this.firstName = firstName;
         this.secondName = secondName;
         this.work = work;
         this.email = email;
         this.phone = phone;
-        this.gender=gender;
+        this.gender = gender;
+
 
     }
+protected ContactEntity(){}
 
-    protected ContactEntity() {
-
-    }
 
     public int getId() {
         return id;
@@ -90,6 +83,14 @@ public class ContactEntity {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
 }

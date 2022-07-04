@@ -1,5 +1,9 @@
 package de.htwberlin.webtech.web.api;
 
+import de.htwberlin.webtech.persistence.Gender;
+
+import java.util.List;
+
 public class Contact {
 
     private int id;
@@ -11,15 +15,6 @@ public class Contact {
     private String gender;
 
 
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public Contact(int id, String firstName, String secondName, String work, String email, String phone, String gender) {
         this.id = id;
         this.firstName = firstName;
@@ -30,6 +25,8 @@ public class Contact {
         this.gender=gender;
     }
 
+    public Contact(int id, String nour, String al_hassan, String student, String email, String phone, String female, List<Object> emptyList) {
+    }
 
 
     public int getId() {
@@ -78,5 +75,13 @@ public class Contact {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

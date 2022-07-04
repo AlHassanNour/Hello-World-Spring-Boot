@@ -6,6 +6,7 @@ import de.htwberlin.webtech.web.api.ContactManipulationRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -36,17 +37,20 @@ public class ContactRestController {
 
 
     @PostMapping(path = "/api/v1/contacts")
+    public ResponseEntity<Void> createContact(@Valid@RequestBody ContactManipulationRequest request) throws URISyntaxException {
+        var valid = validate(request);
+        if (valid) {
+            var contact = contactService.create(request);
+            URI uri = new URI("/api/v1/contacts" + contact.getId());
+            return ResponseEntity.created(uri).build();
+        } else {
+            return ResponseEntity.badRequest().build();
 
-    public ResponseEntity<Void> ctreateContact(@RequestBody ContactManipulationRequest request) throws URISyntaxException {
-       var contact= contactService.create(request);
-       URI uri = new URI ("/api/v1/contacts" + contact.getId());
-       return ResponseEntity.created(uri).build();
+        }
     }
 
-   @PutMapping(path = "/api/v1/contacts/{id}")
-
+    @PutMapping(path = "/api/v1/contacts/{id}")
     public ResponseEntity<Contact> updateContact(@PathVariable int id,@RequestBody ContactManipulationRequest request ){
-
        var contact = contactService.update(id, request);
        return contact != null? ResponseEntity.ok(contact): ResponseEntity.notFound().build();
    }
@@ -56,5 +60,21 @@ public class ContactRestController {
         boolean successful = contactService.deleteById(id);
         return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
+    private boolean validate(ContactManipulationRequest request) {
+       return request.getFirstName() !=null
+               &&!request.getFirstName().isBlank()
+               && request.getSecondName() !=null
+               && !request.getSecondName().isBlank()
+               && request.getEmail() !=null
+               && !request.getEmail().isBlank()
+               && request.getWork() !=null
+               && !request.getWork().isBlank()
+               && request.getGender() !=null
+               && !request.getGender().isBlank()
+               && request.getPhone() !=null
+               && !request.getPhone().isBlank();
+
+    }
+
 
 }
