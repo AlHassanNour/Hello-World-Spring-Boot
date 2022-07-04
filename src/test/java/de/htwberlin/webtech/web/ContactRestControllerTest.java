@@ -31,7 +31,7 @@ public class ContactRestControllerTest {
     @MockBean
     private ContactService contactService;
 
-    @Test
+  /*  @Test
     @DisplayName("should return found persons from contact service")
     void should_return_found_contcat_from_contact_service() throws Exception{
         // given
@@ -59,7 +59,7 @@ public class ContactRestControllerTest {
                 .andExpect(jsonPath("$[1].phone").value("23213123"))
                 .andExpect(jsonPath("$[1].email").value("max@gmail.com"))
                 .andExpect(jsonPath("$[1].gender").value("MALE"));
-    }
+    }*/
     @Test
     @DisplayName("should return 404 if contact is not found")
     void should_return_404_if_contact_is_not_found() throws Exception {
@@ -70,7 +70,7 @@ public class ContactRestControllerTest {
                 // then
                 .andExpect(status().isNotFound());
     }
-    @Test
+    /*@Test
     @DisplayName("should return 201 http status and Location header when creating a contact")
     void should_return_201_http_status_and_location_header_when_creating_a_contact() throws Exception {
         // given
@@ -90,7 +90,7 @@ public class ContactRestControllerTest {
                 .andExpect(header().string("Location", Matchers.equalTo(("/api/v1/contacts/" + contact.getId()))));
 //            .andExpect(header().string("Location", Matchers.containsString(Long.toString(person.getId()))));
 
-    }
+    }*/
     @Test
     @DisplayName("should validate create contact request")
     void should_validate_create_contact_request() throws Exception {
